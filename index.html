@@ -1,0 +1,25 @@
+<head>
+Access-Control-Allow-Origin: https://source.cosmixcom.repl.co
+</head>
+
+<script>
+  get()
+  
+  function get() {
+  var surl = (decodeURIComponent(new URLSearchParams(location.search).get('URL')))
+  
+  var xhr = new XMLHttpRequest();
+xhr.open('GET', surl, true);
+
+xhr.onload = function () {
+  if (this.status === 200) {
+    var data = this.responseText
+
+    document.getElementById("out").innerText = this.responseText
+  }
+};
+
+xhr.send();
+}  
+
+</script>
